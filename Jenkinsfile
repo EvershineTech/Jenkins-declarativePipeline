@@ -14,7 +14,8 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                def sourceDirectory = "https://github.com/EvershineTech/Jenkins-declarativePipeline.git"
+                  checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
+                def sourceDirectory = "${env.WORKSPACE}"
                 def destinationDirectory = "E:/newfolder"
                 def copyFiles = { File src, File dest ->
     if (src.isDirectory()) {
@@ -26,12 +27,7 @@ pipeline {
         dest.bytes = src.bytes
     }
 }
-     try {
-    copyFiles(new File(sourceDirectory), new File(destinationDirectory))
-    println "Project deployed successfully to $destinationDirectory"
-} catch (Exception e) {
-    println "Error deploying project: $e.message"
-}          
+     bat "xcopy /E /Y \"${sourceDirectory}\" \"${destinationDirectory}\""
                 echo 'Deployment completed.'
             }
         }
