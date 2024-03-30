@@ -15,7 +15,7 @@ pipeline {
             steps {
                     script {
                     // Define deployment directory and files
-                    def remoteDir = '\\\\192.168.1.27\\C$\\inetpub\\wwwroot'
+                    def remoteDir = '\\\\http:localhost:999\\C$\\inetpub\\wwwroot'
                      def localFiles = 'C:\\inetpub\\wwwroot\\'  // Update this path to your local files
                     
                     // Execute deployment commands using bat
