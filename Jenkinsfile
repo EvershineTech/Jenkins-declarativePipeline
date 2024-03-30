@@ -9,7 +9,7 @@ pipeline {
                     def sourceDirectory = "${env.WORKSPACE}" // Assuming the repository is cloned into the Jenkins workspace
                     
                     // Define the destination directory
-                    def destinationDirectory = "C:\inetpub\wwwroot\Jenkins-declarativePipeline"
+                    def destinationDirectory = "C:/inetpub/wwwroot/Jenkins-declarativePipeline"
 
                     // Clone the repository
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
