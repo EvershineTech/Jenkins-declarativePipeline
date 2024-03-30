@@ -19,6 +19,7 @@ pipeline {
                      def localFiles = 'C:\\inetpub\\wwwroot\\IISDemo'  // Update this path to your local files
                     
                     // Execute deployment commands using bat
+                        
                     bat """
                     mkdir "${remoteDir}"
                     xcopy /s /y "C:\\inetpub\\wwwroot\\IISDemo" '\\\\localhost:999\C$\\inetpub\\wwwroot'
