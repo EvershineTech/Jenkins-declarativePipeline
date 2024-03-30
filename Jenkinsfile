@@ -13,11 +13,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                // Create the deployment directory on the local IIS server
+               // Create the deployment directory on the local IIS server
                 bat "mkdir '\\\\localhost:999\\C$\\inetpub\\wwwroot\\your_application_name'"
                 
                 // Copy application files to the deployment directory
-                bat "xcopy /s /y 'path_to_your_application_files' '\\\\localhost:999\\C$\\inetpub\\wwwroot\\your_application_name'"
+                bat "xcopy /s /y 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git' '\\\\localhost:999\\C$\\inetpub\\wwwroot\\your_application_name'"
                 
                 // Print deployment completion message
                 echo 'Deployment completed.'
