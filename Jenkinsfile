@@ -25,8 +25,10 @@ pipeline {
 
                     // Copy files from source to destination
                     bat "xcopy /E /Y \"${sourceDirectory}\" \"${destinationDirectory}\""
+                    
                 }
             }
         }
     }
 }
+finished succussfully..
