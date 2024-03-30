@@ -15,7 +15,7 @@ pipeline {
                     def destinationDirectory = "C:/inetpub/wwwroot/newfolder"
 
                     // Check if the destination directory already exists
-                    if (fileExists(destinationDirectory)) {
+                    if (new File(destinationDirectory).exists()) {
                         // Delete the contents of the directory
                         bat "rmdir /S /Q \"${destinationDirectory}\""
                     }
@@ -29,8 +29,4 @@ pipeline {
             }
         }
     }
-}
-
-def fileExists(path) {
-    return file(path).exists()
 }
