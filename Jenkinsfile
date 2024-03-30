@@ -24,6 +24,7 @@ pipeline {
                     xcopy /s /y "${localFiles}" "${remoteDir}"
                     echo Deployment completed.
                     """
+                    }
             }
         }
     }
