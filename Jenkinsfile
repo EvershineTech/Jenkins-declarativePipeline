@@ -11,16 +11,17 @@ pipeline {
                     // Clone the repository
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
 
-                    def directoryPath = "C:/inetpub/wwwroot/newfolder"
-                    if (fileExists(directoryPath)) {
+                    // Define the destination directory
+                    def destinationDirectory = "C:/inetpub/wwwroot/newfolder"
+
+                    // Check if the destination directory already exists
+                    if (fileExists(destinationDirectory)) {
                         // Delete the contents of the directory
-                        bat "rmdir /S /Q \"${directoryPath}\""
+                        bat "rmdir /S /Q \"${destinationDirectory}\""
                     }
-                    // Create the directory
-                    bat "mkdir \"${directoryPath}\""
-                    }
-                    // Create the directory
-                    bat "mkdir ${directoryPath}"
+
+                    // Create the destination directory
+                    bat "mkdir \"${destinationDirectory}\""
 
                     // Copy files from source to destination
                     bat "xcopy /E /Y \"${sourceDirectory}\" \"${destinationDirectory}\""
@@ -28,4 +29,8 @@ pipeline {
             }
         }
     }
+}
+
+def fileExists(path) {
+    return file(path).exists()
 }
