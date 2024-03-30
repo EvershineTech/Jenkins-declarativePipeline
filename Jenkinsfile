@@ -14,6 +14,9 @@ pipeline {
                     // Clone the repository
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
 
+                    // Create the destination directory if it doesn't exist
+                    bat "mkdir \"${destinationDirectory}\""
+
                     // Copy files from source to destination
                     bat "xcopy /E /Y \"${sourceDirectory}\" \"${destinationDirectory}\""
                 }
