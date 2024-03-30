@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-              ecko"Building the Project.........."
+              "Building the Project.........."
             }
         }
         stage('Test') { 
             steps {
-             ecko"Testing the Project........"
+             "Testing the Project........"
             }
         }
         stage('Deploy') { 
             steps {
-             ecko"Deploying the Project....." 
+             "Deploying the Project....." 
             }
         }
     }
