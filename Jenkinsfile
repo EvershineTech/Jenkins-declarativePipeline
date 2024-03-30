@@ -23,10 +23,7 @@ pipeline {
 
                     // Copy files from source to destination
                     bat "xcopy /E /Y \"${sourceDirectory}\" \"${destinationDirectory}\""
-                }
-    
-
-     
+                
                 echo 'Deployment completed.'
             }
         }
