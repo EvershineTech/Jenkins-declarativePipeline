@@ -14,7 +14,10 @@ pipeline {
                     def directoryPath = "C:/inetpub/wwwroot/newfolder"
                     if (fileExists(directoryPath)) {
                         // Delete the contents of the directory
-                        bat "rmdir /S /Q ${directoryPath}"
+                        bat "rmdir /S /Q \"${directoryPath}\""
+                    }
+                    // Create the directory
+                    bat "mkdir \"${directoryPath}\""
                     }
                     // Create the directory
                     bat "mkdir ${directoryPath}"
