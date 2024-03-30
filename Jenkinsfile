@@ -11,18 +11,30 @@ pipeline {
              echo "Testing the Project........"
             }
         }
+       pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the Git repository
+                git 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git'
+            }
+        }
+        
         stage('Deploy') {
             steps {
-               // Create the deployment directory on the local IIS server
-                bat "mkdir '\\\\localhost:999\\C$\\inetpub\\wwwroot\\your_application_name'"
+                // Create the deployment directory on the local IIS server
+                bat 'mkdir "\\\\localhost:999\\C$\\inetpub\\wwwroot\\your_application_name"'
                 
                 // Copy application files to the deployment directory
-                bat "xcopy /s /y 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git' '\\\\localhost:999\\C$\\inetpub\\wwwroot\\your_application_name'"
+                bat 'xcopy /s /y "<absolute_path_to_jenkins_workspace>/Jenkins-declarativePipeline" "\\\\localhost:999\\C$\\inetpub\\wwwroot\\your_application_name"'
                 
                 // Print deployment completion message
                 echo 'Deployment completed.'
-                    }
             }
         }
     }
+}
+
 
