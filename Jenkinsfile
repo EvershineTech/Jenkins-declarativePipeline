@@ -15,13 +15,13 @@ pipeline {
             steps {
                     script {
                     // Define deployment directory and files
-                    def remoteDir = '\\\\http:localhost:999\\C$\\inetpub\\wwwroot'
+                    def remoteDir = mkdir '\\\\localhost:999\C$\\inetpub\\wwwroot'
                      def localFiles = 'C:\\inetpub\\wwwroot\\IISDemo'  // Update this path to your local files
                     
                     // Execute deployment commands using bat
                     bat """
                     mkdir "${remoteDir}"
-                    xcopy /s /y "${localFiles}" "${remoteDir}"
+                    xcopy /s /y "C:\\inetpub\\wwwroot\\IISDemo" '\\\\localhost:999\C$\\inetpub\\wwwroot'
                     echo Deployment completed.
                     """
                     }
