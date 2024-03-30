@@ -11,11 +11,8 @@ pipeline {
              echo "Testing the Project........"
             }
         }
-       pipeline {
-    agent any
-    
-    stages {
-        stage('Checkout') {
+         
+           stage('Checkout') {
             steps {
                 // Checkout the code from the Git repository
                 git 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git'
@@ -34,8 +31,6 @@ pipeline {
                 echo 'Deployment completed.'
             }
         }
-    }
-}
     }
 }
 
