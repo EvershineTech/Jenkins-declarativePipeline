@@ -16,7 +16,7 @@ pipeline {
                     script {
                     // Define deployment directory and files
                     def remoteDir = '\\\\http:localhost:999\\C$\\inetpub\\wwwroot'
-                     def localFiles = 'C:\\inetpub\\wwwroot\\'  // Update this path to your local files
+                     def localFiles = 'C:\\inetpub\\wwwroot\\IISDemo'  // Update this path to your local files
                     
                     // Execute deployment commands using bat
                     bat """
