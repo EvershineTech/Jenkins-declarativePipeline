@@ -13,7 +13,7 @@ pipeline {
 
                     // Define the destination directory
                     def destinationDirectory = "C:/inetpub/wwwroot/newfolder"
-
+                    
                     // Check if the destination directory already exists
                     if (new File(destinationDirectory).exists()) {
                         // Delete the contents of the directory
