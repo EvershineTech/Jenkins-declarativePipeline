@@ -11,22 +11,18 @@ pipeline {
              echo "Testing the Project........"
             }
         }
-        stage('Deploy') { 
+        stage('Deploy') {
             steps {
-                    script {
-                    // Define deployment directory and files
-                     def dir = 'mkdir "\\\\localhost:999\\C$\\inetpub\\wwwroot"'
-                     def localFiles = 'C:\\inetpub\\wwwroot\\IISDemo'  // Update this path to your local files
-                    
-                    // Execute deployment commands using bat
-                        
-                    bat """
-                     
-                    def copyCommand = 'xcopy /s /y "C:\\inetpub\\wwwroot\\IISDemo" "\\\\localhost:999\\C$\\inetpub\\wwwroot"'
-                    echo Deployment completed.
-                    """
+                // Create the deployment directory on the local IIS server
+                bat "mkdir '\\\\localhost:999\\C$\\inetpub\\wwwroot\\your_application_name'"
+                
+                // Copy application files to the deployment directory
+                bat "xcopy /s /y 'path_to_your_application_files' '\\\\localhost:999\\C$\\inetpub\\wwwroot\\your_application_name'"
+                
+                // Print deployment completion message
+                echo 'Deployment completed.'
                     }
             }
         }
     }
-}
+
