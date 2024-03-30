@@ -21,7 +21,7 @@ pipeline {
                     // Execute deployment commands using bat
                         
                     bat """
-                    // mkdir "${remoteDir}"
+                     mkdir "${remoteDir}"
                     def copyCommand = 'xcopy /s /y "C:\\inetpub\\wwwroot\\IISDemo" "\\\\localhost:999\\C$\\inetpub\\wwwroot"'
                     echo Deployment completed.
                     """
