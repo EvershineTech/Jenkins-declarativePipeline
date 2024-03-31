@@ -26,22 +26,10 @@ pipeline {
                     
                     // Copy files from source to destination
                     bat "xcopy /E /Y \"${sourceDirectory}\" \"${destinationDirectory}\""
+                    emailext body: 'This project has been successfully build ', subject: 'This project has been successfully build ', to: 'estsproduct@gmail.com'
                 }
             }
         }
     }
-    
-    // Define post-build actions
-    post {
-        success {
-            emailext subject: "Build Successful",
-                      body: "Your build succeeded. Good job!",
-                      to: "estsproduct@gmail.com"
-        }
-        failure {
-            emailext subject: "Build Failed",
-                      body: "Your build failed. Please check the logs.",
-                      to: "estsproduct@gmail.com"
-        }
-    }
 }
+   
