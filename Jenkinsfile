@@ -16,7 +16,6 @@ pipeline {
                     
                     // Check if the destination directory already exists
                     if (new File(destinationDirectory).exists()) {
-                        
                         // Delete the contents of the directory
                         bat "rmdir /S /Q \"${destinationDirectory}\""
                     }
@@ -26,10 +25,18 @@ pipeline {
                     
                     // Copy files from source to destination
                     bat "xcopy /E /Y \"${sourceDirectory}\" \"${destinationDirectory}\""
-                    emailext body: 'This project has been successfully build ', subject: 'This project has been successfully build ', to: 'estsproduct@gmail.com'
+                }
+            }
+        }
+
+        // Add a new stage for sending email notification
+        stage('Post email') {
+            steps {
+                script { 
+                    // Send email notification
+                    emailext body: 'This project has been successfully built.', subject: 'Project Build Notification', to: 'estsproduct@gmail.com'
                 }
             }
         }
     }
 }
-   
