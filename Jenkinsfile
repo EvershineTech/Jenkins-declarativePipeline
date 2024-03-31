@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    // Import emailext
-    import groovy.transform.Field
-    import groovy.transform.FieldConstructor
-
     stages {
         stage('Deploy Project') {
             steps {
@@ -49,4 +45,3 @@ pipeline {
         }
     }
 }
-
