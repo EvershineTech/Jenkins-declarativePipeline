@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    // Import emailext
+    import groovy.transform.Field
+    import groovy.transform.FieldConstructor
+
     stages {
         stage('Deploy Project') {
             steps {
@@ -28,19 +32,21 @@ pipeline {
                     bat "xcopy /E /Y \"${sourceDirectory}\" \"${destinationDirectory}\""
                 }
             }
-            
-            post {
-                success {
-                    emailext subject: "Build Successful",
-                              body: "Your build succeeded. Good job!",
-                              to: "estsproduct@gmail.com"
-                }
-                failure {
-                    emailext subject: "Build Failed",
-                              body: "Your build failed. Please check the logs.",
-                              to: "estsproduct@gmail.com"
-                }
-            }
+        }
+    }
+    
+    // Define post-build actions
+    post {
+        success {
+            emailext subject: "Build Successful",
+                      body: "Your build succeeded. Good job!",
+                      to: "estsproduct@gmail.com"
+        }
+        failure {
+            emailext subject: "Build Failed",
+                      body: "Your build failed. Please check the logs.",
+                      to: "estsproduct@gmail.com"
         }
     }
 }
+
