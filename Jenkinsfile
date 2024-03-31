@@ -16,6 +16,7 @@ pipeline {
                     
                     // Check if the destination directory already exists
                     if (new File(destinationDirectory).exists()) {
+                        
                         // Delete the contents of the directory
                         bat "rmdir /S /Q \"${destinationDirectory}\""
                     }
