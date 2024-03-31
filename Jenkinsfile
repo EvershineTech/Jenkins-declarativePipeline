@@ -22,7 +22,7 @@ pipeline {
 
                     // Create the destination directory
                     bat "mkdir \"${destinationDirectory}\""
-
+                    
                     // Copy files from source to destination
                     bat "xcopy /E /Y \"${sourceDirectory}\" \"${destinationDirectory}\""
                     
