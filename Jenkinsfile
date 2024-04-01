@@ -28,14 +28,18 @@ pipeline {
                 }
             }
         }
+    }
 
-        // Add a new stage for sending email notification
-        stage('Post email') {
-            steps {
-                script { 
-                    // Send email notification
-                    emailext body: 'Deployment successfull.', subject: 'Project Build Notification', to: 'estsproduct@gmail.com'
-                }
+    post {
+        success {
+            script {
+                emailext body: 'Deployment successful.', subject: 'Project Build Notification', to: 'estsproduct@gmail.com'
+            }
+        }
+
+        failure {
+            script {
+                emailext body: 'Deployment failed.', subject: 'Project Build Notification', to: 'estsproduct@gmail.com'
             }
         }
     }
