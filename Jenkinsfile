@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script { 
                     // Send email notification
-                    emailext body: 'This project has been successfully built.', subject: 'Project Build Notification', to: 'estsproduct@gmail.com'
+                    emailext body: 'Deployment successfull.', subject: 'Project Build Notification', to: 'estsproduct@gmail.com'
                 }
             }
         }
