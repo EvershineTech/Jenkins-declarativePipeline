@@ -1,0 +1,73 @@
+/*
+Template Name: Insurance
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************insurance****************/
+#protec{
+padding-top:40px;
+padding-bottom:40px; 
+ }
+#loan{
+background:#f4f4f4;
+padding-top:40px;
+padding-bottom:40px; 
+ }
+.loan_1l{
+background:#fff;
+padding:40px; 
+ }
+.loan_1l .input-group-text{
+background:none;
+border-right:none; 
+ }
+.loan_1l .form-control{
+border-left:none;
+height:50px;
+font-size:18px; 
+ }
+.loan_1l .form-select{
+border-left:none;
+height:50px;
+font-size:18px; 
+ }
+.loan_1l .form-control:focus{
+box-shadow:none;
+border-color:#ddd;
+ }
+.loan_1l .form-select:focus{
+box-shadow:none;
+border-color:#ddd;
+ }
+#loan .carousel-indicators {
+bottom: -60px;
+}
+#loan .carousel-indicators [data-bs-target] {
+background-color: #DC0E0E;
+}
+/*********************insurance_end****************/
+
+@media screen and (max-width : 767px){
+.loan_1l {
+padding: 40px 15px;
+}
+.loan_1lir {
+float:none!important; 
+ }
+#loan{
+padding-bottom:80px; 
+ }
+.protec_1 br{
+display:none; 
+ }
+ }
+@media (min-width:768px) and (max-width:991px) {
+#loan{
+padding-bottom:80px; 
+ }
+ }
+@media (min-width:992px) and (max-width:1200px) {
+
+ }

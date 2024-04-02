@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -Assured Globe Assistance</title>
+
+    <link href="~/Content/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/global.css" rel="stylesheet" />
+    <link href="~/Content/CSS/index.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <link href="~/Content/Animation/animate.css" rel="stylesheet" />
+    <link href="~/Content/Animation/animate.min.css" rel="stylesheet" />
+   
+</head>
+<body>
+    <section id="top">
+        <div class="container">
+            <div class="row top_1">
+                <div class="col-md-9">
+                    @*<div class="top_1l">
+                            <ul class="mb-0">
+                                <li style="margin-right:10px;" class="d-inline-block"><a class="text-white" href="#">Find a financial professional</a></li>
+                                <li style="margin-right:10px;" class="d-inline-block"><a class="text-white" href="#">Forms</a></li>
+                                <li style="margin-right:10px;" class="d-inline-block"><a class="text-white" href="#">Claims</a></li>
+                                <li class="d-inline-block"><a class="text-white" href="#">Billing and payments</a></li>
+                            </ul>
+                        </div>*@
+                </div>
+                <div class="col-md-3">
+                    <div class="top_1r float-end">
+                        <ul class="mb-0">
+                            <li class="d-inline-block col_2"><a data-bs-target="#exampleModal1" data-bs-toggle="modal" class="text-white" href="#">Sign up</a> <span style="margin-left:5px; margin-right:5px;">/</span> </li>
+                            <li class="d-inline-block col_2"><a data-bs-target="#exampleModal" data-bs-toggle="modal" class="text-white" href="#">Login</a> <span style="margin-left:5px; margin-right:5px;">/</span> </li>
+                        </ul>
+
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none; top:20px;">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="login_1">
+                                            <h3 class="col_1">Register</h3>
+                                            <p>Create Insurance account</p>
+                                            <h6 style="margin-top:40px;">Full Name</h6>
+                                            <input type="email" class="form-control" placeholder="Your Name">
+                                            <h6 style="margin-top:30px;">Email Address</h6>
+                                            <input type="email" class="form-control" placeholder="Your Email">
+                                            <h6 style="margin-top:30px;">Password</h6>
+                                            <input type="email" class="form-control" placeholder="Your Password">
+                                            <div class="d-flex justify-content-between mt-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="remember">
+                                                    <label class="form-check-label" for="remember">
+                                                        I agree with the <a class="col_1" href="#">Terms Of Service</a>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <h6 class="mt-4 mb-0"><a class="button" href="#">REGISTER  <i style="margin-left:5px;" class="fa fa-location-arrow"></i></a></h6>
+                                            <p class="mt-4 mb-0">Already have an account? <a class="col_1" href="#">Login</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none; top:20px;">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="login_1">
+                                            <h3 class="col_1">Login</h3>
+                                            <p>Login with your Insurance account</p>
+                                            <h6 style="margin-top:40px;">Email Address</h6>
+                                            <input type="email" class="form-control" placeholder="Your Email">
+                                            <h6 style="margin-top:30px;">Password</h6>
+                                            <input type="email" class="form-control" placeholder="Your Password">
+                                            <div class="d-flex justify-content-between mt-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="remember">
+                                                    <label class="form-check-label" for="remember">
+                                                        Remember Me
+                                                    </label>
+                                                </div>
+                                                <a href="#" class="col_1">Forgot Password?</a>
+                                            </div>
+                                            <h6 class="mt-4 mb-0"><a class="button" href="#">LOGIN  <i style="margin-left:5px;" class="fa fa-sign-in"></i></a></h6>
+                                            <p class="mt-4 mb-0">Don't have an account? <a class="col_1" href="#">Register</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none; top:20px;">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body p-0">
+                                        <div class="search_1">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Search Here">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-primary" type="button">
+                                                        <i class="fa fa-search"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="header">
+        <nav class="navbar navbar-expand-md navbar-light bg-white" id="navbar_sticky">
+            <div class="container">
+                <a class="navbar-brand col_1" href="index.html"><i style="vertical-align:middle;" class="fa fa-life-saver col_1"></i> Insurance <br><span style="margin-left:42px;" class="col_2 font_12">INSURANCE COMPANY</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Product
+                            </a>
+                            <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                                <li><a class="dropdown-item" href="blog_detail.html">Blog Detail</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Purchase Online
+                            </a>
+                            <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="insurance.html">Insurance</a></li>
+                                <li><a class="dropdown-item" href="team.html">Team</a></li>
+                                <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Claims</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Support</a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Travel Corner</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a style="background:#1b6195;display:block; color:#000!important;" href="#"><i style="vertical-align:middle; margin-right:10px; font-size:30px;" class="fa fa-envelope col_1"></i> 24 hours every day <br><span style="margin-left:44px; font-size:20px; font-weight:bold;">1-234-567-8900</span></a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </section>
+    <div class="body-content">
+        @RenderBody()
+        <hr />
+        <section id="footer">
+            <div class="container">
+                <div class="row footer_1">
+                    <div class="col-md-3">
+                        <div class="footer_1i">
+                            <h4 class="text-white mb-3">Contact Info</h4>
+                            <ul>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"><i style="margin-right:5px;" class="fa fa-map-marker col_1"></i> 15/D Semper Road, Old Fort</a> </li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"><i style="margin-right:5px;" class="fa fa-phone col_1"></i> +123 123 456</a> </li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"><i style="margin-right:5px;" class="fa fa-envelope col_1"></i> info@gmail.com</a></li>
+                            </ul>
+                            <h5 class="mt-4"><a class="button_1" href="#"><i style="margin-right:5px;" class="fa fa-comments"></i> Live Chat </a></h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="footer_1i1">
+                            <h4 class="text-white mb-3">Insurance</h4>
+                            <ul>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Auto Insurance</a> </li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Home Insurance</a> </li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Umbrella Insurance </a></li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Vacation Home Insurance</a> </li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Condo Insurance</a> </li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Renters Insurance </a></li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Motor Home Insurance </a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="footer_1i1">
+                            <h4 class="text-white mb-3">Quick Service Links</h4>
+                            <ul>
+                                <li class="col_2 mb-2"><a class="text-white" href="#">Report a claim</a> </li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Forgot username/password</a> </li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Make a payment </a></li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Register for an account</a> </li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Be a Instive Agent</a> </li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#"> Roadside assistance </a></li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#">View Commercial Auto ID card </a></li>
+                                <li class="col_2 mb-2"><a class="text-white" href="#">Discounts </a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="footer_1i2">
+                            <h4 class="text-white mb-3">Quick Service Links</h4>
+                            <p class="col_3 mt-3 font_16">Subscribe Our Newsletter To Get Latest Update And News And Stay Connected</p>
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <h6 class="mt-4 mb-0"><a class="button" href="#">Subscribe Now   <i style="margin-left:5px;" class="fa fa-paper-plane"></i></a></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_2 mt-3 row" style="background-color: #2A2C2E; padding:30px;">
+                    <div class="col-md-8">
+                        <div class="footer_2l">
+                            <p style="margin-top:2px;" class="mb-0 col_3 font_16">© 2013 Your Website Name. All Rights Reserved | Design by <a class="col_1" href="http://www.templateonweb.com">TemplateOnWeb</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer_2r float-end">
+                            <ul class="mb-0">
+                                <li class="d-inline-block"><a class="col_3" href="#">Support</a></li>
+                                <li style="margin-left:10px; margin-right:10px;" class="d-inline-block"><a class="col_3" href="#">Terms Of Services </a></li>
+                                <li class="d-inline-block"><a class="col_3" href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar_sticky = document.getElementById("navbar_sticky");
+        var sticky = navbar_sticky.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar_sticky.classList.add("sticky")
+            } else {
+                navbar_sticky.classList.remove("sticky");
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/Animation/wow.min.js"></script>
+    <script src="~/Content/Animation/main.js"></script>
+</body>
+</html>

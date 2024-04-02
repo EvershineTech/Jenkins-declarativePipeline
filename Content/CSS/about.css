@@ -1,0 +1,39 @@
+/*
+Template Name: Insurance
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************about****************/
+.hist_2{
+background:#201D1D;
+padding:40px;
+border-radius:8px;
+margin-left:0;
+margin-right:0; 
+ }
+#team{
+padding-top:40px;
+padding-bottom:40px;
+background:#f4f4f4; 
+ }
+/*********************about_end****************/
+
+@media screen and (max-width : 767px){
+.hist_1i {
+width:100%!important; 
+ }
+.hist_2 {
+padding: 30px 15px 40px 15px;
+ }
+.hist_2r{
+margin-top:10px; 
+ }
+}
+@media (min-width:768px) and (max-width:991px) {
+
+ }
+@media (min-width:992px) and (max-width:1200px) {
+
+ }

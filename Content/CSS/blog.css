@@ -1,0 +1,93 @@
+/*
+Template Name: Insurance
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************blog****************/
+#blog{
+padding-top:40px;
+padding-bottom:40px; 
+ }
+.blog_1l1 ul li {
+display: inline-block;
+margin-left: 7px;
+margin-right: 7px;
+}
+.blog_1l1 ul li i {
+margin-right: 5px;
+}
+
+.blog_1r1 .form-control {
+height: 46px;
+font-size: 16px;
+border-color: #ddd;
+box-shadow: none;
+border-radius: 0;
+}
+.blog_1r1 .input-group .btn {
+background: #DC0E0E;
+margin-left: 0!important;
+padding: 10.1px 20px;
+font-size: 16px;
+border-radius: 0;
+border-color: #DC0E0E;
+}
+.blog_1r2 ul li a {
+background: #1b6195;
+}
+
+.blog_1l1 blockquote {
+margin: 20px 0 20px;
+font-size: 16px;
+border-left: 5px solid #DC0E0E;
+background: #f4f4f4;
+padding: 25px 35px 15px;
+}
+.sign {
+text-align: right;
+font-weight: 600;
+font-style: italic;
+font-size: 16px;
+}
+
+.blog_1d3il .form-control {
+background: none;
+height: 50px;
+font-size: 18px;
+color: #999;
+border-radius: 0;
+}
+/*********************blog_end****************/
+
+@media screen and (max-width : 767px){
+.blog_1r{
+margin-top:15px; 
+ }
+.blog_1r2ir {
+margin-top:10px; 
+ }
+.blog_1r2il img {
+height:auto;
+ }
+.blog_1d1i{
+border:none!important;
+text-align:left!important;
+margin-top:10px; 
+ } 
+#blog ul.social-network li{
+margin-bottom:5px; 
+ }
+.blog_1d3il .form-control{
+margin-top:10px;  
+ }
+ }
+@media (min-width:768px) and (max-width:991px) {
+#blog ul.social-network li{
+margin-bottom:5px; 
+ }
+ }
+@media (min-width:992px) and (max-width:1200px) {
+
+ }
