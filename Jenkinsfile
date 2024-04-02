@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Define the path to nuget.exe
-                    def nugetPath = "C:\Program Files (x86)\Microsoft Visual Studio\nuget.exe"
+                    def nugetPath = "C:/Program Files (x86)\Microsoft Visual Studio/nuget.exe"
                     
                     // Check if nuget.exe exists
                     if (new File(nugetPath).exists()) {
