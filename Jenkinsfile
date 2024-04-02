@@ -5,17 +5,11 @@ pipeline {
         stage('Build Project') {
             steps {
                 script {
-                    // Define the source directory
-                    def sourceDirectory = "${env.WORKSPACE}" // Assuming the repository is cloned into the Jenkins workspace
-                    
                     // Clone the repository
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
 
-                    // Change directory to where your project or solution file is located
-                    dir("${sourceDirectory}") {
-                        // Use msbuild to build your .NET project
-                        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe" E:/Build packup /p:Configuration=Release /t:Rebuild'
-                    }
+                    // Use msbuild to build your .NET project
+                    bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe" YourProject.sln /p:Configuration=Release /t:Rebuild'
                 }
             }
         }
