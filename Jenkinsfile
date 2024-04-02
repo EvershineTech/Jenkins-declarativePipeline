@@ -19,7 +19,7 @@ pipeline {
 
         stage('Restore Packages') {
             steps {
-                bat 'nuget restore WebApplications.sln -PackagesDirectory E:/Build packup'
+                bat '"C:\\Program Files (x86)\\NuGet\\Config\\nuget.exe" WebApplication1.sln'
             }
         }
 
