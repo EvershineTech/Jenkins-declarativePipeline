@@ -9,7 +9,9 @@ pipeline {
                     ant {
                         exec(executable: 'nuget.exe', dir: 'sourceDirectory') {
                             arg(value: 'restore')
-                        }
+                            Execute NuGet restore command
+                              bat '"C:\\Program Files (x86)\\NuGet\\Config\\nuget.exe" restore "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Jenkins -declarativePipeline\\WebApplication1.sln"'
+                      
                     }
                 }
             }
