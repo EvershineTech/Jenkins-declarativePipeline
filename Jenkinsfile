@@ -4,6 +4,11 @@ pipeline {
     stages {
         stage('Restore Packages') {
             steps {
+                  // Execute custom Ant task to run NuGet restore command
+                script {
+                    ant {
+                        exec(executable: 'nuget.exe', dir: 'sourceDirectory') {
+                            arg(value: 'restore')
                 bat '"C:\\Program Files (x86)\\NuGet\\Config\\nuget.exe" restore "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Jenkins -declarativePipeline\\WebApplication1.sln"'
             }
         }
