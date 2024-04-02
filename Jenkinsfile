@@ -9,7 +9,7 @@ pipeline {
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
 
                     // Use MSBuild to build the .NET web application
-                    bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe" Jenkins-declarativePipeline.sln /p:Configuration=Release /t:Rebuild'
+                    bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe" "${env.WORKSPACE}/Jenkins-declarativePipeline" /p:Configuration=Release /t:Rebuild'
 
                     // Check if the build was successful
                     if (currentBuild.result == 'SUCCESS') {
