@@ -1,5 +1,12 @@
 pipeline {
     agent any
+    
+    stages {
+        stage('Restore Packages') {
+            steps {
+                bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\nuget.exe" restore "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Jenkins -declarativePipeline\\WebApplication1.sln"'
+    }
+}
 
     stages {
         stage('Build Project') {
@@ -57,11 +64,12 @@ pipeline {
                 emailext body: 'Deployment successful.', subject: 'Project Build Notification', to: 'estsproduct@gmail.com'
             }
         }
-
+    }
         failure {
             script {
                 emailext body: 'Deployment failed.', subject: 'Project Build Notification', to: 'estsproduct@gmail.com'
             }
         }
     }
+}
 }
