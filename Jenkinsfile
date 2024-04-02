@@ -5,11 +5,15 @@ pipeline {
         stage('Build Project') {
             steps {
                 script {
-                    // Clone the repository
+
+                    Define the source directory
+                    def sourceDirectory = "${env.WORKSPACE}" // Assuming the repository is cloned into the Jenkins workspace
+                    
+                     // Clone the repository
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
 
                     // Use MSBuild to build all files in the repository
-                    bat "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe\" \"${env.WORKSPACE}\" /p:Configuration=Release /t:Rebuild"
+                    bat "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe\" \sourceDirectory\" /p:Configuration=Release /t:Rebuild"
                 }
             }
         }
