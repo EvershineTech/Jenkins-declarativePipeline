@@ -4,8 +4,16 @@ pipeline {
     stages {
         stage('Build Project') {
             steps {
-                // Use msbuild to build your .NET project
-                bat '"C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" /p:Configuration=Release /t:Rebuild'
+                script {
+                    // Define the source directory
+                    def sourceDirectory = "${env.WORKSPACE}" // Assuming the repository is cloned into the Jenkins workspace
+                    
+                    // Clone the repository
+                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
+
+                    // Use msbuild to build your .NET project
+                    bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe" /p:Configuration=Release /t:Rebuild'
+                }
             }
         }
         stage('Deploy Project') {
@@ -14,11 +22,8 @@ pipeline {
                     // Define the source directory
                     def sourceDirectory = "${env.WORKSPACE}" // Assuming the repository is cloned into the Jenkins workspace
                     
-                    // Clone the repository
-                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
-
                     // Define the destination directory
-                    def destinationDirectory = "C:/inetpub/wwwroot/newfolder"
+                    def destinationDirectory = "C:\\inetpub\\wwwroot\\newfolder"
                     
                     // Check if the destination directory already exists
                     if (new File(destinationDirectory).exists()) {
@@ -30,7 +35,7 @@ pipeline {
                     bat "mkdir \"${destinationDirectory}\""
                     
                     // Copy files from source to destination
-                    bat "xcopy /E /Y \"${sourceDirectory}\" \"${destinationDirectory}\""
+                    bat "xcopy /E /Y \"${sourceDirectory}\\*.*\" \"${destinationDirectory}\""
                 }
             }
         }
