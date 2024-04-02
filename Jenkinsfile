@@ -12,7 +12,7 @@ pipeline {
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
 
                     // Use msbuild to build your .NET project
-                    bat '"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin" /p:Configuration=Release /t:Rebuild'
+                    bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe" /p:Configuration=Release /t:Rebuild'
                 }
             }
         }
