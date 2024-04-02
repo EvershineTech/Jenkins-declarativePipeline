@@ -8,8 +8,8 @@ pipeline {
                     // Clone the repository
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
 
-                    // Use MSBuild to build the .NET web application
-                    bat "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe\" ${env.WORKSPACE}/YourProject.csproj /p:Configuration=Release /t:Rebuild"
+                    // Use MSBuild to build all files in the repository
+                    bat "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe\" ${env.WORKSPACE} /p:Configuration=Release /t:Rebuild"
                 }
             }
         }
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // Define the source directory
-                    def sourceDirectory = "${env.WORKSPACE}/bin/Release"
+                    def sourceDirectory = "${env.WORKSPACE}\\bin\\Release"
 
                     // Define the destination directory
                     def destinationDirectory = "C:\\inetpub\\wwwroot\\newfolder"
