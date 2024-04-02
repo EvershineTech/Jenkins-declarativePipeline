@@ -18,10 +18,9 @@ pipeline {
                 }
             }
         }
-         stages {
-        stage('Restore Packages') {
+            stage('Restore Packages') {
             steps {
-                bat 'nuget restore YourSolution.sln -PackagesDirectory E:\\Your\\Package\\Directory'
+                bat 'nuget restore YourSolution.sln -PackagesDirectory E:\Build packup'
             }
         } 
          }
