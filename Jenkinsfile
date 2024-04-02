@@ -20,7 +20,7 @@ pipeline {
         }
             stage('Restore Packages') {
             steps {
-                bat 'nuget restore WebApplications.sln -PackagesDirectory E:\Build packup'
+                bat 'nuget restore WebApplications.sln -PackagesDirectory E:/Build packup'
             }
         } 
          }
