@@ -18,7 +18,13 @@ pipeline {
                 }
             }
         }
-
+         stages {
+        stage('Restore Packages') {
+            steps {
+                bat 'nuget restore YourSolution.sln -PackagesDirectory E:\\Your\\Package\\Directory'
+            }
+        } 
+         }
         stage('Deploy Project') {
             steps {
                 script {
