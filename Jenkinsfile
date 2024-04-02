@@ -14,7 +14,7 @@ pipeline {
                     // Change directory to where your project or solution file is located
                     dir("${sourceDirectory}") {
                         // Use msbuild to build your .NET project
-                        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe" E:\Build packup /p:Configuration=Release /t:Rebuild'
+                        bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe" E:/Build packup /p:Configuration=Release /t:Rebuild'
                     }
                 }
             }
