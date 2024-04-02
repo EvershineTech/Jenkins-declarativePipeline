@@ -4,15 +4,17 @@ pipeline {
     stages {
         stage('Restore Packages') {
             steps {
-                  // Execute custom Ant task to run NuGet restore command
                 script {
+                    // Execute custom Ant task to run NuGet restore command
                     ant {
                         exec(executable: 'nuget.exe', dir: 'sourceDirectory') {
                             arg(value: 'restore')
-                bat '"C:\\Program Files (x86)\\NuGet\\Config\\nuget.exe" restore "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Jenkins -declarativePipeline\\WebApplication1.sln"'
+                        }
+                    }
+                }
             }
         }
-
+        
         stage('Build Project') {
             steps {
                 script {
@@ -61,9 +63,6 @@ pipeline {
             script {
                 emailext body: 'Deployment failed.', subject: 'Project Build Notification', to: 'estsproduct@gmail.com'
             }
-        }
-    }
-}
         }
     }
 }
