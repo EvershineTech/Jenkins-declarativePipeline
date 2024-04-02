@@ -11,8 +11,11 @@ pipeline {
                     // Clone the repository
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
 
-                    // Use MSBuild to build all files in the repository
-                    bat "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe\" \"${sourceDirectory}\" /p:Configuration=Release /t:Rebuild"
+                    // Specify the path to the project file
+                    def projectFile = "${sourceDirectory}/YourProject.csproj" // Replace YourProject.csproj with your actual project file name
+                    
+                    // Use MSBuild to build the project file
+                    bat "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe\" \"${projectFile}\" /p:Configuration=Release /t:Rebuild"
                 }
             }
         }
