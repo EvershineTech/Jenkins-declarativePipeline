@@ -5,7 +5,7 @@ pipeline {
         stage('Build Project') {
             steps {
                 // Use msbuild to build your .NET project
-                bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe" /p:Configuration=Release /t:Rebuild'
+                bat '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin" /p:Configuration=Release /t:Rebuild'
             }
         }
         stage('Deploy Project') {
