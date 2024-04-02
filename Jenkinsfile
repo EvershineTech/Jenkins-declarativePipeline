@@ -13,7 +13,7 @@ pipeline {
                     def sourceDirectory = "${env.WORKSPACE}" // Assuming the repository is cloned into the Jenkins workspace
                                         
 		// Use MSBuild to build the project
-                    bat "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe\" \"${sourceDirectory}\" /p:Configuration=Release /t:Rebuild"
+                    bat C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft.WebApplication.targets\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe\" \"${sourceDirectory}\" /p:Configuration=Release /t:Rebuild"
 
 		stage('Deploy Project') {
             	steps {
