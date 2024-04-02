@@ -15,7 +15,7 @@ pipeline {
                     def projectFile = "${sourceDirectory}/YourProject.csproj" // Replace YourProject.csproj with your actual project file name
                     
                     // Use MSBuild to build the project file
-                    bat "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe\" \"${projectFile}\" /p:Configuration=Release /t:Rebuild"
+                    bat "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe\" E:\newfolder\WebApplication1 /p:Configuration=Release /t:Rebuild"
                 }
             }
         }
