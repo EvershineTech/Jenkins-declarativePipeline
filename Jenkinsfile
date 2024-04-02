@@ -6,20 +6,22 @@ pipeline {
             steps {
                 script {
 
-			// Clone the repository
+                    // Clone the repository
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/EvershineTech/Jenkins-declarativePipeline.git']]])
-			
-			// Define the source directory
+
+                    // Define the source directory
                     def sourceDirectory = "${env.WORKSPACE}" // Assuming the repository is cloned into the Jenkins workspace
                                         
-		// Use MSBuild to build the project
-                    bat C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin \"${sourceDirectory}\" /p:Configuration=Release /t:Rebuild"
+                    // Use MSBuild to build the project
+                    bat "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\msbuild.exe\" \"${sourceDirectory}\" /p:Configuration=Release /t:Rebuild"
 
-		stage('Deploy Project') {
-            	steps {
-                	script {
-                    
+                }
+            }
+        }
 
+        stage('Deploy Project') {
+            steps {
+                script {
                     // Define the destination directory
                     def destinationDirectory = "C:/inetpub/wwwroot/newfolder"
                     
@@ -51,8 +53,5 @@ pipeline {
                 emailext body: 'Deployment failed.', subject: 'Project Build Notification', to: 'estsproduct@gmail.com'
             }
         }
-    }
-}
-	}
     }
 }
