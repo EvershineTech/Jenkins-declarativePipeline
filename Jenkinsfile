@@ -5,7 +5,7 @@ pipeline {
         stage('Restore Packages') {
             steps {
                 script {
-                    // Define the path to nuget.exe
+                    // Define the path to nuget.exe -----
                     def nugetPath = "C:/Program Files (x86)/Microsoft Visual Studio/nuget.exe"
                     
                     // Check if nuget.exe exists
